@@ -1,9 +1,17 @@
-let numeroseguimiento =  Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000;
 
-function showAlert() {
-  alert(`Muchas gracias por su compra! Su numero de seguimiento es ${numeroseguimiento} `);
-}
-;
+  const productos = document.querySelectorAll('.card');
+  productos.forEach(producto => {
+    producto.addEventListener('click', () => {
+     
+      console.log('Felicitaciones acabas de adquirir ' + producto.querySelector('h2').innerText);
+    });
+  });
+
+  function showAlert() {
+    alert('Producto agregado al carrito (Chequear la Consola ;))');
+  }
+
+
 
 const toggleButton = document.getElementsByClassName('navbar-toggle')[0];
 const navbarLinks = document.getElementsByClassName('navbar-links')[0];
@@ -11,7 +19,6 @@ const navbarLinks = document.getElementsByClassName('navbar-links')[0];
 toggleButton.addEventListener('click', () => {
   navbarLinks.classList.toggle('active');
 });
-
 
 window.addEventListener('load', function() {
   const pageTitle = document.getElementById('titlepag');
